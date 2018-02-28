@@ -1,0 +1,20 @@
+{
+  "name": "alpha",
+  "version": "0.1.0",
+  "description": "alpha for mp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react.js",
+    "next.js"
+  ],
+  "author": "makernw@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^5.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
