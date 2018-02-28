@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Snapshot Testing App shows "Welcome to MPost" 1`] = `
+<div
+  className="jsx-3868048425 top-container"
+>
+  <h1
+    className="jsx-3868048425"
+  >
+    Welcome to MPost
+  </h1>
+</div>
+`;

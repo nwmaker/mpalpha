@@ -6,6 +6,7 @@ dist
 node_modules
 package-lock.json
 test/node_modules
+__test__/node_modules
 
 # logs & pids
 *.log
@@ -17,4 +18,5 @@ coverage
 
 # test output
 test/**/out
+__test__/**/out
 .DS_Store
