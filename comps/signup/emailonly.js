@@ -24,8 +24,6 @@ class EmailOnly extends React.Component {
   }
 
   handleChange(e) {
-    console.log(e)
-
     this.setState({
       email: e.target.value
     })
@@ -33,12 +31,10 @@ class EmailOnly extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log('sub', e)
     this.setState({
       id: Date.now(), 
       newSub: this.state.email
     })
-    console.log(this.state.id)
   }
 
   renderConfirmation() {
@@ -63,7 +59,7 @@ class EmailOnly extends React.Component {
   render() {
     return (
       <div className='signup'>
-        { (this.state.newSignup === null) 
+        { (this.state.id === null) 
           ? this.renderForm()
           : this.renderConfirmation()
         }
