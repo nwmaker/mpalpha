@@ -1,7 +1,11 @@
 import React from 'react'
 
 /* 
- * only email address is required 
+ * only email address is required
+ *
+ * to validate the email address is in fact more complicated than
+ * the regular expression here.
+ * TODO 
  */
 
 class EmailOnly extends React.Component {
@@ -15,12 +19,16 @@ class EmailOnly extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.validateEmailFormat = this.validateEmailFormat.bind(this)
   }
 
   validateEmailFormat() {
-    return (
-      this.state.email.length > 0
-    )
+    const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+    if (reg.test(this.state.email) === false)
+    {
+      return false
+    }
+    return true
   }
 
   handleChange(e) {
@@ -31,10 +39,14 @@ class EmailOnly extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.setState({
-      id: Date.now(), 
-      newSub: this.state.email
-    })
+    if (this.validateEmailFormat()) {
+      this.setState({
+        id: Date.now(), 
+        newSub: this.state.email
+      })
+    } else {
+      alert('Please check your email format')
+    }
   }
 
   renderConfirmation() {
@@ -49,7 +61,7 @@ class EmailOnly extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>Email</label>
-        <input value={this.state.email} 
+        <input value={this.state.email}
                onChange={this.handleChange}/>
         <button onClick={this.handleSubmit}>Notify me</button>
       </form>
